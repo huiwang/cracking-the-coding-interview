@@ -21,10 +21,6 @@ import java.util.stream.Collectors;
 class _01_01_IsUnique {
 
     boolean isUnique(String str) {
-        return isUniqueWithSet(str);
-    }
-
-    private boolean isUniqueWithSet(String str) {
         Set<Integer> set = str.chars().boxed().collect(Collectors.toSet());
         return set.size() == str.length();
     }
