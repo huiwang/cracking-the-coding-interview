@@ -1,28 +1,27 @@
 package com.truelaure.ctci.linkedlists;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-
-import static org.junit.Assert.*;
+import static com.truelaure.ctci.linkedlists.LinkedListNode.*;
+import static org.junit.Assert.assertEquals;
 
 public class _02_01_RemoveDupsTest {
+
+    private _02_01_RemoveDups s = new _02_01_RemoveDups();
+
     @Test
-    public void removeDups() throws Exception {
-        _02_01_RemoveDups removeDups = new _02_01_RemoveDups();
+    public void withEmptyList() {
+        assertEquals(empty(), s.removeDups(empty()));
+    }
 
-        Assert.assertEquals(LinkedListNode.empty(), removeDups.removeDups(LinkedListNode.empty()));
+    @Test
+    public void withUniqueList() {
+        assertEquals(of(1, 2, 3, 4), s.removeDups(of(1, 2, 3, 4)));
+    }
 
-        Assert.assertEquals(
-                LinkedListNode.of(1, 2, 3, 4),
-                removeDups.removeDups(LinkedListNode.of(1, 2, 3, 4)));
-
-        Assert.assertEquals(
-                LinkedListNode.of(1, 2, 3, 4),
-                removeDups.removeDups(
-                        LinkedListNode.of(1, 2, 2, 3, 2, 4)));
+    @Test
+    public void withDuplications() {
+        assertEquals(of(1, 2, 3, 4), s.removeDups(of(1, 2, 2, 3, 2, 4)));
     }
 
 }

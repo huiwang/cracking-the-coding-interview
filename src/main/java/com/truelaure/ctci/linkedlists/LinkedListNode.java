@@ -7,7 +7,7 @@ public class LinkedListNode {
     int val;
     LinkedListNode next;
 
-    LinkedListNode(int val) {
+    private LinkedListNode(int val) {
         this.val = val;
     }
 
@@ -38,7 +38,6 @@ public class LinkedListNode {
     }
 
     static LinkedListNode of(int... list) {
-        if (list.length == 0) return null;
         LinkedListNode pre = null;
         LinkedListNode head = null;
         for (int val : list) {

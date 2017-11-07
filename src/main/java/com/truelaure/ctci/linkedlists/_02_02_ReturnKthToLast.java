@@ -5,7 +5,7 @@ package com.truelaure.ctci.linkedlists;
  */
 class _02_02_ReturnKthToLast {
 
-    LinkedListNode returnKthToLast(LinkedListNode head, int k) {
+    LinkedListNode kthToLast(LinkedListNode head, int k) {
         LinkedListNode kth = head;
         LinkedListNode runner = head;
         int dist = 0;

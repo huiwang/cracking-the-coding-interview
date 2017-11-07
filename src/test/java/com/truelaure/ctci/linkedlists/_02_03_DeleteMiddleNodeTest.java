@@ -1,19 +1,29 @@
 package com.truelaure.ctci.linkedlists;
 
-import org.junit.Assert;
 import org.junit.Test;
 
+import static com.truelaure.ctci.linkedlists.LinkedListNode.of;
 import static org.junit.Assert.*;
 
 public class _02_03_DeleteMiddleNodeTest {
+
+    private _02_03_DeleteMiddleNode s = new _02_03_DeleteMiddleNode();
+
     @Test
-    public void deleteMiddleNode() throws Exception {
-        _02_03_DeleteMiddleNode solution = new _02_03_DeleteMiddleNode();
-        LinkedListNode input = LinkedListNode.of(1, 2, 3);
-        Assert.assertFalse(solution.deleteMiddleNode(null));
-        Assert.assertFalse(solution.deleteMiddleNode(input.next.next));
-        Assert.assertTrue(solution.deleteMiddleNode(input.next));
-        Assert.assertEquals(LinkedListNode.of(1, 3), input);
+    public void withNull() {
+        assertFalse(s.deleteMiddleNode(null));
+    }
+
+    @Test
+    public void withLastNode() {
+        assertFalse(s.deleteMiddleNode(of(1, 2, 3).next.next));
+    }
+
+    @Test
+    public void withMiddleNode() {
+        LinkedListNode input = of(1, 2, 3);
+        assertTrue(s.deleteMiddleNode(input.next));
+        assertEquals(of(1, 3), input);
     }
 
 }

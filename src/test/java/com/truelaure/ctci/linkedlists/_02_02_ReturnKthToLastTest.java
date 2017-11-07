@@ -1,18 +1,29 @@
 package com.truelaure.ctci.linkedlists;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static com.truelaure.ctci.linkedlists.LinkedListNode.of;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class _02_02_ReturnKthToLastTest {
+
+    private _02_02_ReturnKthToLast s = new _02_02_ReturnKthToLast();
+
     @Test
-    public void returnKthToLast() throws Exception {
-        _02_02_ReturnKthToLast kthToLast = new _02_02_ReturnKthToLast();
-        Assert.assertEquals(3, kthToLast.returnKthToLast(LinkedListNode.of(1, 2, 3), 0).val);
-        Assert.assertEquals(2, kthToLast.returnKthToLast(LinkedListNode.of(1, 2, 3), 1).val);
-        Assert.assertEquals(1, kthToLast.returnKthToLast(LinkedListNode.of(1, 2, 3), 2).val);
-        Assert.assertNull(kthToLast.returnKthToLast(LinkedListNode.of(1, 2, 3), 3));
+    public void withOutOfScopeK() {
+        assertNull(s.kthToLast(of(1, 2, 3), 3));
     }
+
+    @Test
+    public void withZero() {
+        assertEquals(3, s.kthToLast(of(1, 2, 3), 0).val);
+    }
+
+    @Test
+    public void withNoneZero() {
+        assertEquals(2, s.kthToLast(of(1, 2, 3), 1).val);
+    }
+
 
 }
