@@ -9,6 +9,8 @@ import java.util.Set;
  */
 class _02_01_RemoveDups {
 
+    // time o(n)
+    // space o(n)
     LinkedListNode removeDups(LinkedListNode head) {
         Set<Integer> set = new HashSet<>();
         LinkedListNode pre = null;
