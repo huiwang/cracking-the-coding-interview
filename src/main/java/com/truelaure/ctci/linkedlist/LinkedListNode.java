@@ -1,4 +1,4 @@
-package com.truelaure.ctci.linkedlists;
+package com.truelaure.ctci.linkedlist;
 
 import java.util.Objects;
 

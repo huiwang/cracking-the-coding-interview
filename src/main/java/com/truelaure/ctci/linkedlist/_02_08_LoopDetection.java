@@ -1,4 +1,4 @@
-package com.truelaure.ctci.linkedlists;
+package com.truelaure.ctci.linkedlist;
 
 /**
  * Loop Detection: Given a circular linked list, implement an algorithm that returns the node at the

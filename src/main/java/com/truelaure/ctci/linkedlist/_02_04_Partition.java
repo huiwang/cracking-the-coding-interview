@@ -1,4 +1,4 @@
-package com.truelaure.ctci.linkedlists;
+package com.truelaure.ctci.linkedlist;
 
 /**
  * Partition: Write code to partition a linked list around a value x,

@@ -1,8 +1,8 @@
-package com.truelaure.ctci.linkedlists;
+package com.truelaure.ctci.linkedlist;
 
 import org.junit.Test;
 
-import static com.truelaure.ctci.linkedlists.LinkedListNode.of;
+import static com.truelaure.ctci.linkedlist.LinkedListNode.of;
 import static org.junit.Assert.*;
 
 public class _02_03_DeleteMiddleNodeTest {

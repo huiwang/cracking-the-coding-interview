@@ -1,9 +1,11 @@
-package com.truelaure.ctci.linkedlists;
+package com.truelaure.ctci.linkedlist;
 
 import org.junit.Test;
 
-import static com.truelaure.ctci.linkedlists.LinkedListNode.*;
-import static org.junit.Assert.*;
+import static com.truelaure.ctci.linkedlist.LinkedListNode.empty;
+import static com.truelaure.ctci.linkedlist.LinkedListNode.of;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class _02_06_PalindromeTest {
 

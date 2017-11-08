@@ -1,4 +1,4 @@
-package com.truelaure.ctci.linkedlists;
+package com.truelaure.ctci.linkedlist;
 
 /**
  * Intersection: Given two (singly) linked lists, determine if the two lists intersect.

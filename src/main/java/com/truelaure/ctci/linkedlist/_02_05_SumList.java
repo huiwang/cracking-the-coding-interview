@@ -1,4 +1,4 @@
-package com.truelaure.ctci.linkedlists;
+package com.truelaure.ctci.linkedlist;
 
 /**
  * Sum Lists: You have two numbers represented by a linked list,
