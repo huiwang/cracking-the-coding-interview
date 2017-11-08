@@ -7,7 +7,7 @@ public class LinkedListNode {
     int val;
     LinkedListNode next;
 
-    private LinkedListNode(int val) {
+    LinkedListNode(int val) {
         this.val = val;
     }
 
