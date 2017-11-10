@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
-public class _05_08_DrawlineTest {
+public class _05_08_DrawLineTest {
 
     private _05_08_DrawLine s = new _05_08_DrawLine();
 
@@ -12,7 +12,6 @@ public class _05_08_DrawlineTest {
     public void with1Row8Columns_DrawEntireLine() {
         assertArrayEquals(new byte[]{(byte) 0xff}, s.drawLine(new byte[]{0}, 8, 0, 7, 0));
     }
-
 
     @Test
     public void with1Row8Columns_DrawSubLine() {
