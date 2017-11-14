@@ -13,23 +13,38 @@ package com.truelaurel.ctci.arraystring;
  */
 class _01_05_OneAway {
     boolean isOneAway(String a, String b) {
-        int[][] table = new int[a.length() + 1][b.length() + 1];
-        for (int i = 0; i < a.length() + 1; i++) {
-            for (int j = 0; j < b.length() + 1; j++) {
-                if (i == 0) {
-                    table[i][j] = j;
-                } else if (j == 0) {
-                    table[i][j] = i;
-                } else if (a.charAt(i - 1) == b.charAt(j - 1)) {
-                    table[i][j] = table[i - 1][j - 1];
-                } else {
-                    int replace = table[i - 1][j - 1];
-                    int insert = table[i - 1][j];
-                    int delete = table[i][j - 1];
-                    table[i][j] = Math.min(replace, Math.min(insert, delete)) + 1;
-                }
+        if (a.length() == b.length()) {
+            return oneReplace(a, b);
+        } else if (a.length() - b.length() == 1) {
+            return oneInsertion(a, b);
+        } else if (b.length() - a.length() == 1) {
+            return oneInsertion(b, a);
+        } else {
+            return false;
+        }
+    }
+
+    private boolean oneInsertion(String longStr, String shortStr) {
+        boolean insert = false;
+        for (int i = 0, j = 0; i < shortStr.length(); i++, j++) {
+            if (shortStr.charAt(i) != longStr.charAt(j)) {
+                if (insert) return false;
+                insert = true;
+                i--;
             }
         }
-        return table[a.length()][b.length()] <= 1;
+
+        return true;
+    }
+
+    private boolean oneReplace(String a, String b) {
+        boolean replace = false;
+        for (int i = 0; i < a.length(); i++) {
+            if (a.charAt(i) != b.charAt(i)) {
+                if (replace) return false;
+                replace = true;
+            }
+        }
+        return true;
     }
 }
