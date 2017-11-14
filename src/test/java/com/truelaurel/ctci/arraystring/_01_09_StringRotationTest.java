@@ -25,6 +25,11 @@ public class _01_09_StringRotationTest {
     }
 
     @Test
+    public void withSubstring_ButDifferentSize() {
+        assertFalse(s.rotated("hello", "llo"));
+    }
+
+    @Test
     public void withDifferentWords() {
         assertFalse(s.rotated("hello", "world"));
     }

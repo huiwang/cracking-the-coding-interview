@@ -7,7 +7,7 @@ package com.truelaurel.ctci.arraystring;
  */
 class _01_09_StringRotation {
     boolean rotated(String original, String result) {
-        return isSubstring((original + original), result);
+        return original.length() == result.length() && isSubstring((original + original), result);
     }
 
     private boolean isSubstring(String complete, String sub) {
