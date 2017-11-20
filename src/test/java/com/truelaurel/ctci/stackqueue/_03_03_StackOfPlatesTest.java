@@ -1,0 +1,36 @@
+package com.truelaurel.ctci.stackqueue;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class _03_03_StackOfPlatesTest {
+
+    @Test
+    public void withBigThreshold() {
+        _03_03_StackOfPlates stack = new _03_03_StackOfPlates(100);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+        stack.push(6);
+        assertEquals(6, stack.pop());
+        assertEquals(5, stack.pop());
+        assertEquals(4, stack.pop());
+        assertEquals(3, stack.pop());
+    }
+
+    @Test
+    public void withSmallThreshold() {
+        _03_03_StackOfPlates stack = new _03_03_StackOfPlates(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+        stack.push(6);
+        assertEquals(6, stack.pop());
+        assertEquals(5, stack.pop());
+        assertEquals(4, stack.pop());
+        assertEquals(3, stack.pop());
+    }
+
+
+}
