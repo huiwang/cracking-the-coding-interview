@@ -1,14 +1,11 @@
 package com.truelaurel.ctci.stackqueue;
 
-import java.util.ArrayList;
-import java.util.EmptyStackException;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 class _03_03_StackOfPlates {
 
     private final int threshold;
-    private final List<Stack<Integer>> stacks;
+    private final List<Deque<Integer>> stacks;
 
     _03_03_StackOfPlates(int threshold) {
         this.threshold = threshold;
@@ -17,7 +14,7 @@ class _03_03_StackOfPlates {
 
     void push(int val) {
         if (stacks.isEmpty() || isLastStackFull()) {
-            stacks.add(new Stack<>());
+            stacks.add(new LinkedList<>());
         }
         lastStack().push(val);
     }
@@ -26,15 +23,33 @@ class _03_03_StackOfPlates {
         return lastStack().size() == threshold;
     }
 
-    private Stack<Integer> lastStack() {
+    private Deque<Integer> lastStack() {
         return stacks.get(stacks.size() - 1);
     }
 
     int pop() {
         if (stacks.isEmpty()) throw new EmptyStackException();
-        Stack<Integer> stack = lastStack();
+        Deque<Integer> stack = lastStack();
         int val = stack.pop();
-        if (stack.isEmpty()) stacks.remove(stacks.size() - 1);
+        if (stack.isEmpty()) removeLast();
         return val;
+    }
+
+    int popAt(int stackNum) {
+        int val = stacks.get(stackNum).pop();
+        for (int i = stackNum; i < stacks.size(); i++) {
+            if (i + 1 < stacks.size()) {
+                Deque<Integer> nextStack = stacks.get(i + 1);
+                stacks.get(i).push(nextStack.removeLast());
+            }
+        }
+        if (lastStack().isEmpty()) {
+            removeLast();
+        }
+        return val;
+    }
+
+    private void removeLast() {
+        stacks.remove(stacks.size() - 1);
     }
 }
