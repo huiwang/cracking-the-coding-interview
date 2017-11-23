@@ -13,7 +13,7 @@ import java.util.LinkedList;
  * <p>
  * You may use the built-in Linked list data structure.
  */
-public class _03_06_AnimalShelter {
+class _03_06_AnimalShelter {
 
     private int counter = 0;
     private LinkedList<Animal> dogs = new LinkedList<>();
