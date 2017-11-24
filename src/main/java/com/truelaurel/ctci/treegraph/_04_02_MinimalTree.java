@@ -6,6 +6,7 @@ package com.truelaurel.ctci.treegraph;
  */
 class _04_02_MinimalTree {
 
+    // time o(N), space o(logN)
     BinaryTreeNode buildMinimalTree(int[] vals) {
         return build(vals, 0, vals.length - 1);
     }
