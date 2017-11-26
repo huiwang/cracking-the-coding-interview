@@ -41,4 +41,5 @@ public class _04_02_MinimalTreeTest {
         assertEquals(3, binaryTreeNode.right.val);
         assertEquals(4, binaryTreeNode.right.right.val);
     }
+
 }
