@@ -7,15 +7,17 @@ package com.truelaurel.ctci.treegraph;
  */
 class _04_04_CheckBalanced {
 
+    //time o(N) space o(logN)
     boolean isBalanced(BinaryTreeNode root) {
-
-        if (root == null) return true;
-        if (Math.abs(height(root.left) - height(root.right)) > 1) return false;
-        return isBalanced(root.left) && isBalanced(root.right);
+        return isBalancedWithHeight(root) != -1;
     }
 
-    private int height(BinaryTreeNode root) {
+    private int isBalancedWithHeight(BinaryTreeNode root) {
         if (root == null) return 0;
-        return 1 + Math.max(height(root.left), height(root.right));
+        int hl = isBalancedWithHeight(root.left);
+        int hr = isBalancedWithHeight(root.right);
+        if (Math.abs(hl - hr) > 1 || hr == -1 || hl == -1) return -1;
+        return Math.max(hl, hr) + 1;
     }
+
 }
