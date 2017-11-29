@@ -11,7 +11,7 @@ import java.util.Random;
  * Design and implement an algorithm for getRandomNode,
  * and explain how you would implement the rest of the methods.
  */
-public class _04_11_RandomNode {
+class _04_11_RandomNode {
 
     public static class Node {
         private int size = 1;
@@ -19,11 +19,11 @@ public class _04_11_RandomNode {
         private Node right;
         private int val;
 
-        public Node(int val) {
+        Node(int val) {
             this.val = val;
         }
 
-        public void insert(int val) {
+        void insert(int val) {
             if (val <= this.val) {
                 if (left != null) {
                     left.insert(val);
@@ -40,7 +40,7 @@ public class _04_11_RandomNode {
             size++;
         }
 
-        public Node find(int val) {
+        Node find(int val) {
             if (val == this.val) {
                 return this;
             } else if (val <= this.val) {
@@ -50,7 +50,7 @@ public class _04_11_RandomNode {
             }
         }
 
-        public Node getIthNode(int i) {
+        Node getIthNode(int i) {
             int leftSize = left == null ? 0 : left.size;
             if (i < leftSize) {
                 return left.getIthNode(i);
@@ -66,19 +66,19 @@ public class _04_11_RandomNode {
         }
     }
 
-    public static class Tree {
+    static class Tree {
         private Node root;
 
-        public void insert(int val) {
+        void insert(int val) {
             if (root == null) root = new Node(val);
             root.insert(val);
         }
 
-        public Node find(int val) {
+        Node find(int val) {
             return root == null ? null : root.find(val);
         }
 
-        public Node getRandomNode() {
+        Node getRandomNode() {
             Random random = new Random();
             int i = random.nextInt(root.size);
             return root.getIthNode(i);
