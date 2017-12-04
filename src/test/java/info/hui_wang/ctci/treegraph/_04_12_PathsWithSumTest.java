@@ -25,4 +25,21 @@ public class _04_12_PathsWithSumTest {
         assertEquals(1, s.countPathWithSum(root, 3));
         assertEquals(0, s.countPathWithSum(root, 4));
     }
+
+    @Test
+    public void withMoreDepths() {
+        BinaryTreeNode root = new BinaryTreeNode(10);
+        root.left = new BinaryTreeNode(5);
+        root.left.left = new BinaryTreeNode(3);
+        root.left.left.left = new BinaryTreeNode(3);
+        root.left.left.right = new BinaryTreeNode(-2);
+        root.left.right = new BinaryTreeNode(1);
+        root.left.right.right = new BinaryTreeNode(2);
+
+        root.right = new BinaryTreeNode(-3);
+        root.right.right = new BinaryTreeNode(-11);
+
+        assertEquals(2, s.countPathWithSum(root, 8));
+
+    }
 }
