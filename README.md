@@ -12,6 +12,14 @@
 - master: 含有测试，问题和答案
 - questions: 只含有测试和问题，供训练使用
 
-比如，您可以使用下面的命令查看IsUnique的答案
+1. Fork本仓库
+ 
+2. 调出```questions```分支
 
-```git diff questions master -- src/main/java/arraystring/_01_01_IsUnique.java```
+    ```git checkout questions```
+
+3. 在此分支下训练，用测试验证答案
+
+4. 比如，您可以使用下面的命令查看IsUnique的答案
+
+    ```git diff questions master -- src/main/java/arraystring/_01_01_IsUnique.java```
