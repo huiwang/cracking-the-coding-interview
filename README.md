@@ -31,4 +31,4 @@ To get started, please follow the steps below:
 # Keep practicing
 
 Don't worry if you stuck on questions. When it happens, go out for a walk, eat some [chocolate](http://amzn.to/2nGetGv) 
-or send me an email. Come back later when you feel better. The most important thing is that you keep practicing.
+or send me a [tweet](https://twitter.com/mhuiwang). Come back later when you feel better. The most important thing is that you keep practicing.
