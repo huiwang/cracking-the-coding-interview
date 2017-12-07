@@ -1,25 +1,34 @@
-# 感谢
-我们必须要感谢Gayle Laakmann McDowell。她的[Cracking the Coding Interview](http://amzn.to/2zTpjdP)（以下简称宝典）给程序员们和面试者们搭起了一座沟通的桥梁。
-不要以为只有找工作的程序员才读这本书，面试官们也在读！
+# Acknowledgement
+All of us should give credits to Gayle Laakmann McDowell for her great work on [Cracking the Coding Interview](http://amzn.to/2zTpjdP). 
+Ctci saves us a lot of time to improve problem solving skills and makes the preparation more efficient.
 
-# 为什么创建此仓库
-本仓库是对宝典的补充。宝典本身的设计思路已经非常完善，实现了问题，提示和参考答案的分离。引导程序员们开动大脑，一步一步找到答案。
 
-其中不足的是没有提供裁判系统，缺少测试来验证答案。
+# Why this repo
+Ctci stands out by providing not only questions but also incremental hints and solutions. However, comparing to 
+online judge systems, Ctci doesn't come with tests. This repo attempts to fill this gap by adding tests for each question. 
+- First, writing tests helps to understand the question.
+- Second, we can improve our testing skills
+- Last but not least, tests allow to try out many different solutions.
 
-# 如何使用
-本仓库目前含有两个分支:
-- master: 含有测试，问题和答案
-- questions: 只含有测试和问题，供训练使用
+# Get started
 
-1. Fork本仓库
- 
-2. 调出```questions```分支
+This repo includes three git branches:
+- **questions-only**: Use this branch to practice both your testing and problem solving skills.
+- **questions-and-tests**: With provided tests, you can focus on solving problems.
+- **master**: Compare your tests and solutions with references.
 
-    ```git checkout questions```
+To get started, please follow the steps below:
+1. Fork this repository
+2. Practice
+    - Checkout `questions-only` branch if you prefer to write both tests and solutions
+    - Checkout `questions-and-tests` branch if you only care about finding solutions
+3. Compare with the reference. For instance，you want to check the optimal solution for `IsUnique`
 
-3. 在此分支下训练，用测试验证答案
+    ```git diff master -- src/main/java/arraystring/_01_01_IsUnique.java```
 
-4. 比如，您可以使用下面的命令查看IsUnique的答案
+4. Give your feedback! If you find better solutions or tests, we'd love to see your Pull Request. 
+    
+# Keep practicing
 
-    ```git diff questions master -- src/main/java/arraystring/_01_01_IsUnique.java```
+Don't worry if you stuck on questions. When it happens, go out for a walk, eat some [chocolate](http://amzn.to/2nGetGv) 
+or send me an email. Come back later when you feel better. The most important thing is that you keep practicing.
