@@ -10,20 +10,6 @@ package bitmanipulation;
  */
 class _05_03_FlipBitToWin {
     int flip(int n) {
-        if (n == -1) return 32;
-        int pre = 0;
-        int cur = 0;
-        int max = 1;
-        while (n != 0) {
-            if ((n & 1) == 1) {
-                cur++;
-            } else {
-                pre = (n & 2) == 0 ? 0 : cur;
-                cur = 0;
-            }
-            max = Math.max(max, pre + cur + 1);
-            n >>>= 1;
-        }
-        return max;
+        throw new UnsupportedOperationException();
     }
 }

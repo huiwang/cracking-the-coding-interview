@@ -13,38 +13,7 @@ package arraystring;
  */
 class _01_05_OneAway {
     boolean isOneAway(String a, String b) {
-        if (a.length() == b.length()) {
-            return oneReplace(a, b);
-        } else if (a.length() - b.length() == 1) {
-            return oneInsertion(a, b);
-        } else if (b.length() - a.length() == 1) {
-            return oneInsertion(b, a);
-        } else {
-            return false;
-        }
+        throw new UnsupportedOperationException();
     }
 
-    private boolean oneInsertion(String longStr, String shortStr) {
-        boolean insert = false;
-        for (int i = 0, j = 0; i < shortStr.length(); i++, j++) {
-            if (shortStr.charAt(i) != longStr.charAt(j)) {
-                if (insert) return false;
-                insert = true;
-                i--;
-            }
-        }
-
-        return true;
-    }
-
-    private boolean oneReplace(String a, String b) {
-        boolean replace = false;
-        for (int i = 0; i < a.length(); i++) {
-            if (a.charAt(i) != b.charAt(i)) {
-                if (replace) return false;
-                replace = true;
-            }
-        }
-        return true;
-    }
 }

@@ -18,29 +18,6 @@ package bitmanipulation;
  */
 class _05_08_DrawLine {
     byte[] drawLine(byte[] screen, int width, int x1, int x2, int y) {
-        if (x2 < x1) throw new IllegalArgumentException("end must not be less than start");
-        int startByte = x1 / 8;
-        int endByte = x2 / 8;
-
-        int row = width / 8 * y;
-
-        for (int i = startByte + 1; i <= endByte - 1; i++) {
-            screen[row + i] = (byte) 0xff;
-        }
-
-        int startIndex = x1 % 8;
-        int endIndex = x2 % 8;
-
-        if (startByte == endByte) {
-            set(screen, row + startByte, startIndex, endIndex);
-        } else {
-            set(screen, row + startByte, startIndex, 7);
-            set(screen, row + endByte, 0, endIndex);
-        }
-        return screen;
-    }
-
-    private void set(byte[] screen, int i, int start, int end) {
-        screen[i] |= (byte) ((0xff >> start) & ~(0xff >> (end + 1)));
+        throw new UnsupportedOperationException();
     }
 }

@@ -1,7 +1,5 @@
 package stackqueue;
 
-import java.util.LinkedList;
-
 /**
  * An animal shelter, which holds only dogs and cats, operates on a strictly "first in, first out" basis.
  * People must adopt either the "oldest" (based on arrival time) of all animals at the shelter,
@@ -15,38 +13,25 @@ import java.util.LinkedList;
  */
 class _03_06_AnimalShelter {
 
-    private int counter = 0;
-    private LinkedList<Animal> dogs = new LinkedList<>();
-    private LinkedList<Animal> cats = new LinkedList<>();
 
     void enqueueDog(int num) {
-        dogs.add(new Animal(num, counter++));
+        throw new UnsupportedOperationException();
     }
 
     void enqueueCat(int num) {
-        cats.add(new Animal(num, counter++));
+        throw new UnsupportedOperationException();
     }
 
     int dequeueAny() {
-        if (dogs.isEmpty()) {
-            return cats.remove().num;
-        } else if (cats.isEmpty()) {
-            return dogs.remove().num;
-        } else {
-            if (dogs.peek().counter < cats.peek().counter) {
-                return dogs.remove().num;
-            } else {
-                return cats.remove().num;
-            }
-        }
+        throw new UnsupportedOperationException();
     }
 
     int dequeueDog() {
-        return dogs.remove().num;
+        throw new UnsupportedOperationException();
     }
 
     int dequeueCat() {
-        return cats.remove().num;
+        throw new UnsupportedOperationException();
     }
 
     static class Animal {

@@ -10,12 +10,6 @@ package bitmanipulation;
  */
 public class _05_06_Conversion {
     int convert(int a, int b) {
-        int c = a ^ b;
-        int ones = 0;
-        while (c > 0) {
-            ones++;
-            c &= c - 1;
-        }
-        return ones;
+        throw new UnsupportedOperationException();
     }
 }

@@ -6,6 +6,6 @@ package bitmanipulation;
  */
 class _05_07_PairwiseSwap {
     int swap(int n) {
-        return ((0xaaaa_aaaa & n) >>> 1) | ((0x5555_5555 & n) << 1);
+        throw new UnsupportedOperationException();
     }
 }

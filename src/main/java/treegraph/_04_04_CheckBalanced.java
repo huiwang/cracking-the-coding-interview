@@ -9,15 +9,8 @@ class _04_04_CheckBalanced {
 
     //time o(N) space o(logN)
     boolean isBalanced(BinaryTreeNode root) {
-        return isBalancedWithHeight(root) != -1;
+        throw new UnsupportedOperationException();
     }
 
-    private int isBalancedWithHeight(BinaryTreeNode root) {
-        if (root == null) return 0;
-        int hl = isBalancedWithHeight(root.left);
-        int hr = isBalancedWithHeight(root.right);
-        if (Math.abs(hl - hr) > 1 || hr == -1 || hl == -1) return -1;
-        return Math.max(hl, hr) + 1;
-    }
 
 }

@@ -11,16 +11,6 @@ import java.util.Stack;
 class _03_05_SortStack {
 
     Stack<Integer> sort(Stack<Integer> stack) {
-        Stack<Integer> tmp = new Stack<>();
-        while (!stack.isEmpty()) {
-            int top = stack.pop();
-            if (!tmp.isEmpty() && top > tmp.peek()) {
-                while (!tmp.isEmpty()) {
-                    stack.push(tmp.pop());
-                }
-            }
-            tmp.push(top);
-        }
-        return tmp;
+        throw new UnsupportedOperationException();
     }
 }

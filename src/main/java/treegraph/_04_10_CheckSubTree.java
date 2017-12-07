@@ -12,25 +12,10 @@ class _04_10_CheckSubTree {
     private StringBuilder sb;
 
     boolean isSubTree(BinaryTreeNode a, BinaryTreeNode b) {
-        sb = new StringBuilder();
-        preOrder(a);
-        String preorderA = sb.toString();
-        sb = new StringBuilder();
-        preOrder(b);
-        String preorderB = sb.toString();
-        return preorderA.contains(preorderB);
+        throw new UnsupportedOperationException();
     }
 
 
-    private void preOrder(BinaryTreeNode a) {
-        if (a == null) {
-            sb.append('x');
-        } else {
-            sb.append(a.val);
-            preOrder(a.left);
-            preOrder(a.right);
-        }
 
-    }
 
 }

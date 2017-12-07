@@ -12,34 +12,6 @@ package linkedlist;
  */
 class _02_05_SumListReverse {
     LinkedListNode sum(LinkedListNode l1, LinkedListNode l2) {
-        LinkedListNode head = null;
-        LinkedListNode tail = null;
-        int carry = 0;
-        while (l1 != null || l2 != null) {
-            LinkedListNode n = new LinkedListNode(0);
-            int sum = carry;
-            if (l1 != null) {
-                sum += l1.val;
-                l1 = l1.next;
-            }
-
-            if (l2 != null) {
-                sum += l2.val;
-                l2 = l2.next;
-            }
-
-            n.val = sum % 10;
-            carry = sum / 10;
-
-            if (head == null) {
-                head = n;
-                tail = n;
-            } else {
-                tail.next = n;
-                tail = n;
-            }
-        }
-        if (carry == 1) tail.next = new LinkedListNode(1);
-        return head;
+        throw new UnsupportedOperationException();
     }
 }

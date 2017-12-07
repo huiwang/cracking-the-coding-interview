@@ -1,6 +1,5 @@
 package treegraph;
 
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -12,36 +11,11 @@ import java.util.List;
  */
 class _04_07_BuildOrder {
 
-    private boolean onStack[];
-    private boolean visited[];
-    private Digraph digraph;
-    private LinkedList<Integer> topological = new LinkedList<>();
+
 
     List<Integer> findBuildOrder(Digraph digraph) {
-        this.digraph = digraph;
-        onStack = new boolean[digraph.size()];
-        visited = new boolean[digraph.size()];
-        for (int i = 0; i < digraph.size(); i++) {
-            if (!visited[i]) {
-                dfs(i);
-            }
-        }
-        if (topological.size() != digraph.size()) return null;
-        return topological;
+        throw new UnsupportedOperationException();
     }
 
-    private void dfs(int v) {
-        onStack[v] = true;
-        visited[v] = true;
-        for (Integer adj : digraph.adjacent(v)) {
-            if (visited[adj] && onStack[adj]) {
-                return;
-            }
-            if (!visited[adj]) {
-                dfs(adj);
-            }
-        }
-        onStack[v] = false;
-        topological.add(v);
-    }
+
 }

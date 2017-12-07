@@ -7,10 +7,7 @@ package arraystring;
  */
 class _01_09_StringRotation {
     boolean rotated(String original, String result) {
-        return original.length() == result.length() && isSubstring((original + original), result);
+        throw new UnsupportedOperationException();
     }
 
-    private boolean isSubstring(String complete, String sub) {
-        return complete.contains(sub);
-    }
 }

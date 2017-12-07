@@ -1,8 +1,5 @@
 package arraystring;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Given a string, write a function to check if it is a permutation of a palindrome.
  * A palindrome is a word or phrase that is the same forwards and backwards.
@@ -15,12 +12,6 @@ import java.util.Set;
  */
 class _01_04_PalindromePermutation {
     boolean check(String s) {
-        Set<Character> set = new HashSet<>();
-        for (char c : s.toCharArray()) {
-            if (c == ' ') continue;
-            if (set.contains(c)) set.remove(c);
-            else set.add(c);
-        }
-        return set.size() < 2;
+        throw new UnsupportedOperationException();
     }
 }
