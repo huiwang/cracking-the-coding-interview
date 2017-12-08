@@ -8,12 +8,7 @@ package mathlogic;
 public class _06_01_TheHeavyPill {
 
     /**
-     * pick one pill form the #1 bottle and two pills from #2 bottle and n pills from #n bottle
-     * according the extra contribution, we can't identify the bottle with heavy pills
-     * weight = normalWeight + extraWeight where normalWeight = (1 + 2 + ... + 20) = 20 * ( 1 + 20)/2 = 210
-     * #bottle = (weight - 210) / 0.1
-     * <p>
-     * note that we need to assume there are enough pills in the bottles
+     * describe your solution here
      */
     void solution() {
     }
