@@ -6,22 +6,7 @@ package recursivedp;
  */
 class _08_01_TripleStep {
 
-    //time o(n) space o(1)
     int countWays(int steps) {
-        if (steps == 0) return 1;
-        else if (steps == 1) return 1;
-        else if (steps == 2) return 2;
-        else if (steps == 3) return 4;
-        int a = 1;
-        int b = 2;
-        int c = 4;
-        int ways = 0;
-        for (int i = 4; i <= steps; i++) {
-            ways = a + b + c;
-            a = b;
-            b = c;
-            c = ways;
-        }
-        return ways;
+        throw new UnsupportedOperationException();
     }
 }
