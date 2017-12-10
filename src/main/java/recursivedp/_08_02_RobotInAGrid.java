@@ -1,5 +1,6 @@
 package recursivedp;
 
+import java.awt.*;
 import java.util.List;
 
 /**
@@ -9,11 +10,9 @@ import java.util.List;
  * from the top left to the bottom right.
  */
 class _08_02_RobotInAGrid {
-    List<Direction> findPath(boolean[][] grid) {
+    List<Point> findPath(boolean[][] grid) {
         throw new UnsupportedOperationException();
     }
 
-    enum Direction {
-        RIGHT, DOWN
-    }
+
 }
