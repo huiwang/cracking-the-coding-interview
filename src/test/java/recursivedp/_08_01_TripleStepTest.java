@@ -48,8 +48,4 @@ public class _08_01_TripleStepTest {
         assertEquals(13, s.countWays(5));
     }
 
-    @Test(expected = Exception.class)
-    public void withBigStep() {
-        s.countWays(37);
-    }
 }
