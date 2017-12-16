@@ -1,6 +1,5 @@
 package recursivedp;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,26 +15,8 @@ import java.util.List;
  */
 class _08_06_HanoiTowers {
 
-    private static final int LEFT = 1; // id(left) = 1
-    private static final int RIGHT = 3; // id(right) = 3
-    private static final int SUM = 6; // id(center) = 2
-
     List<Integer> leftToRight(int n) {
-        return move(n, LEFT, RIGHT);
+        throw new UnsupportedOperationException();
     }
 
-    private List<Integer> move(int n, int from, int to) {
-        if (n == 1) {
-            List<Integer> moves = new ArrayList<>();
-            moves.add(from);
-            moves.add(to);
-            return moves;
-        }
-        int buffer = SUM - from - to;
-        List<Integer> moves = move(n - 1, from, buffer);
-        moves.add(from);
-        moves.add(to);
-        moves.addAll(move(n - 1, buffer, to));
-        return moves;
-    }
 }
