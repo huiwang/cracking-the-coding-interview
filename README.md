@@ -11,12 +11,12 @@ However, comparing to online judge systems, Ctci doesn't come with tests. This r
 # Get started
 
 This repo includes two git branches:
-- **practice**: With provided tests, you can focus on problem solving.
-- **master**: Compare your tests and solutions with references.
+- **practice**: Only tests are provided. It's up to you to come up with a solution.
+- **master**: Both tests and solutions are provided. Compare your tests and solutions with references.
 
 To get started, please follow the steps below:
 1. Fork this repository
-2. Checkout `practice` branch to solve questions
+2. Checkout `practice` branch to solve problems
 3. Compare with the reference. For instance，you want to check the optimal solution for `IsUnique`
 
     ```git diff master -- src/main/java/arraystring/_01_01_IsUnique.java```
