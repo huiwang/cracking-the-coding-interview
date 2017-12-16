@@ -1,9 +1,10 @@
 # Acknowledgement
-We should give credits to Gayle Laakmann McDowell for her great work [Cracking the Coding Interview](http://amzn.to/2zTpjdP). 
+Credits should go to Gayle Laakmann McDowell for her great work on [Cracking the Coding Interview](http://amzn.to/2zTpjdP). 
 
 # Why this repo
 Ctci stands out among many interview books by providing not only questions but also incremental hints and solutions. 
-However, comparing to online judge systems, Ctci doesn't come with tests. This repo attempts to fill this gap by adding tests for each question. 
+However, Ctci doesn't come with tests. This repo attempts to fill this gap by adding tests for each question.
+ 
 - First, writing tests helps to understand the question.
 - Second, we can improve our testing skills
 - Last but not least, tests allow to try out many different solutions.
@@ -11,8 +12,8 @@ However, comparing to online judge systems, Ctci doesn't come with tests. This r
 # Get started
 
 This repo includes two git branches:
-- **practice**: Only tests are provided. It's up to you to come up with a solution.
-- **master**: Both tests and solutions are provided. Compare your tests and solutions with references.
+- **practice**: Only tests are provided. It's up to you to find a solution.
+- **master**: Both tests and solutions are provided. Compare yours with mine.
 
 To get started, please follow the steps below:
 1. Fork this repository
