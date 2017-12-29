@@ -10,30 +10,30 @@ import static org.junit.Assert.assertEquals;
 
 public class _08_07_PermutationWithoutDupTest {
 
-    private _08_07_PermutationWithoutDup f = new _08_07_PermutationWithoutDup();
+    private _08_07_PermutationWithoutDup s = new _08_07_PermutationWithoutDup();
 
     @Test
     public void withEmptyString() {
-        assertEquals(Collections.singleton(""), f.computePermutation(""));
+        assertEquals(Collections.singleton(""), s.computePermutation(""));
     }
 
     @Test
     public void withOneChar() {
-        assertEquals(Collections.singleton("a"), f.computePermutation("a"));
+        assertEquals(Collections.singleton("a"), s.computePermutation("a"));
     }
 
     @Test
     public void withTwoChars() {
-        assertEquals(new HashSet<>(Arrays.asList("ab", "ba")), f.computePermutation("ab"));
-        assertEquals(new HashSet<>(Arrays.asList("ab", "ba")), f.computePermutation("ba"));
+        assertEquals(new HashSet<>(Arrays.asList("ab", "ba")), s.computePermutation("ab"));
+        assertEquals(new HashSet<>(Arrays.asList("ab", "ba")), s.computePermutation("ba"));
     }
 
     @Test
     public void withThreeChars() {
         HashSet<String> result = new HashSet<>(Arrays.asList("abc", "acb", "bca", "bac", "cab", "cba"));
-        assertEquals(result, f.computePermutation("abc"));
-        assertEquals(result, f.computePermutation("acb"));
-        assertEquals(result, f.computePermutation("bca"));
+        assertEquals(result, s.computePermutation("abc"));
+        assertEquals(result, s.computePermutation("acb"));
+        assertEquals(result, s.computePermutation("bca"));
     }
 
 }
