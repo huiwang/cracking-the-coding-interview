@@ -18,41 +18,8 @@ package recursivedp;
  */
 public class _08_10_PaintFill {
 
-    private int[][] screen;
-    private int rows;
-    private int cols;
-    private int oldColor;
-    private int newColor;
-
     int[][] paintFill(int[][] screen, int row, int col, int newColor) {
-        this.screen = screen;
-        rows = screen.length;
-        if (rows == 0) throw new IllegalArgumentException("scree must contain at least one row");
-        cols = screen[0].length;
-        oldColor = screen[row][col];
-        this.newColor = newColor;
-        doPaint(row, col);
-        return screen;
+        throw new UnsupportedOperationException();
     }
 
-    private void doPaint(int row, int col) {
-        if (screen[row][col] != oldColor) return;
-
-        screen[row][col] = newColor;
-        if (row > 0) {
-            doPaint(row - 1, col);
-        }
-
-        if (row < rows - 1) {
-            doPaint(row + 1, col);
-        }
-
-        if (col > 0) {
-            doPaint(row, col - 1);
-        }
-
-        if (col < cols - 1) {
-            doPaint(row, col + 1);
-        }
-    }
 }
