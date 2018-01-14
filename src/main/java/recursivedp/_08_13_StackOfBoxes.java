@@ -1,6 +1,5 @@
 package recursivedp;
 
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -15,32 +14,9 @@ import java.util.List;
 public class _08_13_StackOfBoxes {
 
     int createStack(List<Box> boxes) {
-        boxes.sort(Comparator.comparing(b -> -b.h));
-        int[] cache = new int[boxes.size()];
-        int max = 0;
-        for (int i = 0; i < boxes.size(); i++) {
-            int h = doCreateStack(boxes, i, cache);
-            max = Math.max(max, h);
-        }
-        return max;
+        throw new UnsupportedOperationException();
     }
 
-    private int doCreateStack(List<Box> boxes, int bottom, int[] cache) {
-        if (cache[bottom] > 0) return cache[bottom];
-        if (bottom == boxes.size()) return 0;
-        int max = 0;
-        Box current = boxes.get(bottom);
-        for (int i = bottom + 1; i < boxes.size(); i++) {
-            Box next = boxes.get(i);
-            if (next.canPutAbove(current)) {
-                int h = doCreateStack(boxes, i, cache);
-                max = Math.max(max, h);
-            }
-        }
-        int total = current.h + max;
-        cache[bottom] = total;
-        return total;
-    }
 
     static class Box {
         int w;
@@ -51,10 +27,6 @@ public class _08_13_StackOfBoxes {
             this.w = w;
             this.h = h;
             this.d = d;
-        }
-
-        boolean canPutAbove(Box that) {
-            return that.h > h && that.w > w && that.d > d;
         }
     }
 }
