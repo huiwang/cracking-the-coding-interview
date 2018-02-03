@@ -8,6 +8,10 @@ import java.util.stream.Collectors;
  */
 public class _10_02_GroupAnagrams {
 
+    /**
+     * time o(n) ( o(nklogk) when k is the max length of a word, klogk becomes constant so we have o(n))
+     * space o(n)
+     */
     List<String> groupAnagrams(List<String> words) {
         if (words == null || words.isEmpty()) return words;
         Map<String, List<String>> anagrams = new HashMap<>();
