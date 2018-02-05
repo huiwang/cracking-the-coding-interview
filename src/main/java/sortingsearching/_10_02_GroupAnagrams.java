@@ -7,6 +7,10 @@ import java.util.List;
  */
 public class _10_02_GroupAnagrams {
 
+    /**
+     * time o(n) ( o(nklogk) when k is the max length of a word, klogk becomes constant so we have o(n))
+     * space o(n)
+     */
     List<String> groupAnagrams(List<String> words) {
         throw new UnsupportedOperationException();
     }
