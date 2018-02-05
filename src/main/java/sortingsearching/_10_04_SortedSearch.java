@@ -13,27 +13,7 @@ import java.util.Arrays;
 public class _10_04_SortedSearch {
 
     int sortedSearch(Listy listy, int target) {
-        if (target <= 0) return -1;
-        return doSearch(listy, 0, 0, target);
-    }
-
-    private int doSearch(Listy listy, int start, int end, int target) {
-        if (end < start) return -1;
-        if (listy.at(start) == -1) return -1;
-        if (target <= listy.at(end)) {
-            int mid = start + (end - start) / 2;
-            if (target == listy.at(mid)) {
-                return mid;
-            } else if (target < listy.at(mid)) {
-                return doSearch(listy, start, mid - 1, target);
-            } else {
-                return doSearch(listy, mid + 1, end, target);
-            }
-        } else if (listy.at(end) == -1) {
-            return doSearch(listy, start, start + (end - start) / 2, target);
-        } else {
-            return doSearch(listy, end + 1, (end + 1) * 2, target);
-        }
+        throw new UnsupportedOperationException();
     }
 
     static class Listy {
