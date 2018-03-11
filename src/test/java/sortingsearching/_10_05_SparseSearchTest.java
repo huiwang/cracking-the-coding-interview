@@ -20,11 +20,17 @@ public class _10_05_SparseSearchTest {
 
     }
 
-
     @Test
     public void withManySparse() {
         Assert.assertEquals(0, sparseSearch.find(
                 new String[]{"hello", "", "", "", "", "", "", "", "", "", "", "", "", ""},
+                "hello"));
+
+    }
+    @Test
+    public void withWordInTheEnd() {
+        Assert.assertEquals(3, sparseSearch.find(
+                new String[]{"", "", "", "hello"},
                 "hello"));
 
     }

@@ -23,12 +23,12 @@ public class _10_05_SparseSearch {
             int right = mid;
             while (true) {
                 if (left < start && right > end) return -1;
-                if (!arr[left].isEmpty()) {
+                if (left >= start && !arr[left].isEmpty()) {
                     mid = left;
                     break;
                 }
 
-                if (!arr[right].isEmpty()) {
+                if (right <= end && !arr[right].isEmpty()) {
                     mid = right;
                     break;
                 }
