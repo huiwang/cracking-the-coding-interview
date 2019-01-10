@@ -20,16 +20,16 @@ public class _01_04_PalindromePermutationTest {
 
     @Test
     public void withTwoWords_OddLetters() {
-        assertTrue(s.check("acto tac"));
+        assertTrue(s.check("acto tca"));
     }
 
     @Test
     public void withTwoWords_OddLetters_ThreeOccurences() {
-        assertTrue(s.check("act atac"));
+        assertTrue(s.check("act atca"));
     }
 
     @Test
     public void withTwoWords_EvenLetters() {
-        assertTrue(s.check("act cat"));
+        assertTrue(s.check("act tca"));
     }
 }
