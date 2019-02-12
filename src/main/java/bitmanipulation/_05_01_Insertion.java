@@ -1,5 +1,7 @@
 package bitmanipulation;
 
+import java.util.BitSet;
+
 /**
  * You are given two 32-bit numbers, N and M, and two bit positions, i and j.
  * Write a method to insert M into N such that M starts at bit j and ends at bit i.
@@ -14,6 +16,28 @@ package bitmanipulation;
 class _05_01_Insertion {
 
     int insert(int n, int m, int i, int j) {
-        throw new UnsupportedOperationException();
+        printBits(n);
+        printBits(m);
+        int allOnes = -1;
+        int left = allOnes << (j + 1);
+        int right = (1 << i) - 1;
+        int mask = left | right;
+        int offset = m << i;
+        int cleared = n & mask;
+        int result = cleared | offset;
+        printBits(result);
+        return result;
+    }
+
+    private void printBits(int n) {
+        System.out.print(n + ": ");
+        int mask = 1 << 31; // get "10000000 00000000 00000000 00000000"
+        for (int i = 1; i <= 32; ++i, n <<= 1) {
+            System.out.print((n & mask) == 0 ? "0" : "1");
+            if (i % 8 == 0) {
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
     }
 }
