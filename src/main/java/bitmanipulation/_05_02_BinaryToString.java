@@ -6,6 +6,15 @@ package bitmanipulation;
  */
 class _05_02_BinaryToString {
     String print(double num) {
-        throw new UnsupportedOperationException();
+        if (num < 0 || num > 1) {
+            return "ERROR:";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 32; ++i) {
+            if (num == 0) {
+
+            }
+        }
+        return "ERROR:";
     }
 }
