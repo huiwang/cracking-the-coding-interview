@@ -87,10 +87,11 @@ public class MathLesson14_Graph {
 
     @Override
     public String toString() {
-        return "MathLesson14_Graph{" +
-                "nodes=" + Arrays.deepToString(nodes) +
-                ", size=" + size +
-                '}';
+        StringBuilder sb = new StringBuilder("MathLesson14_Graph size : " + size + "\n");
+        for (Node node : nodes) {
+            sb.append(node.toString()).append("\n");
+        }
+        return sb.toString();
     }
 }
 
