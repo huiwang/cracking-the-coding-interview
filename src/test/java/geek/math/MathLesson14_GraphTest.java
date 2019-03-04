@@ -10,13 +10,11 @@ import static org.junit.Assert.*;
 
 public class MathLesson14_GraphTest {
 
+    private MathLesson14_Graph userGraph;
+
     @Before
     public void setUp() throws Exception {
-    }
-
-    @Test
-    public void testBfs() {
-        MathLesson14_Graph userGraph = new MathLesson14_Graph(10);
+        userGraph = new MathLesson14_Graph(10);
         userGraph.append(new Node(0, new int[]{1, 8}))
                 .append(new Node(1, new int[]{0, 6, 7, 9}))
                 .append(new Node(2, new int[]{4, 9}))
@@ -28,6 +26,10 @@ public class MathLesson14_GraphTest {
                 .append(new Node(8, new int[]{0, 7}))
                 .append(new Node(9, new int[]{1, 2, 7}));
         System.out.println(userGraph.toString());
+    }
+
+    @Test
+    public void testBfs() {
         List<Integer[]> friendOfDegree = userGraph.bfs(0);
         System.out.println("friend list of user 0: ");
         friendOfDegree.forEach(d -> System.out.println(Arrays.deepToString(d)));
@@ -41,5 +43,14 @@ public class MathLesson14_GraphTest {
         MathLesson14_Graph r = new MathLesson14_Graph();
         System.out.println(r.toString());
         List<Integer[]> f = r.bfs(1);
+    }
+
+    @Test
+    public void distance() {
+        assertEquals(0, userGraph.distance(0, 0));
+        assertEquals(1, userGraph.distance(0, 1));
+        assertEquals(2, userGraph.distance(0, 6));
+        assertEquals(3, userGraph.distance(0, 4));
+        assertEquals(-1, userGraph.distance(0, 3));
     }
 }

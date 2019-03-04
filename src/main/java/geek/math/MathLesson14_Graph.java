@@ -93,6 +93,62 @@ public class MathLesson14_Graph {
         }
         return sb.toString();
     }
+
+    public int distance(int a, int b) {
+        if (a >= this.size || b >= this.size) {
+            return -1;
+        }
+        if (a == b) {
+            return 0;
+        }
+        Map<Integer, Integer> degreeMapA = new HashMap<>();
+        degreeMapA.put(a, 0);
+        Map<Integer, Integer> degreeMapB = new HashMap<>();
+        degreeMapB.put(b, 0);
+        Queue<Integer> queueA = new LinkedList<>();
+        Queue<Integer> queueB = new LinkedList<>();
+        queueA.offer(a);
+        queueB.offer(b);
+        final int MAX_DEGREE = 10;
+        int degreeA = 0, degreeB = 0;
+        while ((degreeA + degreeB) < MAX_DEGREE && (!queueA.isEmpty() || !queueB.isEmpty())) {
+            degreeA = getNextDegreeFriends(queueA, degreeA, degreeMapA);
+            if (!Collections.disjoint(degreeMapA.keySet(), degreeMapB.keySet())) {
+                return degreeA + degreeB;
+            }
+            degreeB = getNextDegreeFriends(queueB, degreeB, degreeMapB);
+            if (!Collections.disjoint(degreeMapA.keySet(), degreeMapB.keySet())) {
+                return degreeA + degreeB;
+            }
+        }
+        return -1;
+    }
+
+    private int getNextDegreeFriends(Queue<Integer> queue, int degree, Map<Integer, Integer> map) {
+        int count = queue.size();
+        if (count == 0) {
+            return degree;
+        }
+        int newDegree = degree;
+        for (int i = 0; i < count; ++i) {
+            int id = queue.poll();
+            Node node = nodes[id];
+            if (node.friends != null) {
+                Iterator<Integer> iter = node.friends.iterator();
+                while (iter.hasNext()) {
+                    int uid = iter.next();
+                    if (map.get(uid) != null) {
+                        continue;
+                    } else {
+                        newDegree = degree + 1;
+                        queue.offer(uid);
+                        map.put(uid, newDegree);
+                    }
+                };
+            }
+        }
+        return newDegree;
+    }
 }
 
 class Node {
