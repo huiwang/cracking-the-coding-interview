@@ -13,6 +13,21 @@ package linkedlist;
 class _02_04_Partition {
 
     LinkedListNode partition(LinkedListNode head, int x) {
-        throw new UnsupportedOperationException();
+        if (head == null) {
+            return null;
+        }
+        LinkedListNode partition = null;
+        LinkedListNode prev = head;
+        LinkedListNode next = head.next;
+        while (next != null) {
+            if (next.val >= x) {
+                if (partition == null) {
+                    partition = next;
+                } else {
+                    partition.next = next;
+                }
+                prev.next = next.next;
+            }
+        }
     }
 }
