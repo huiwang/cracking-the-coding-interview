@@ -13,7 +13,31 @@ package linkedlist;
 class _02_05_SumList {
 
     LinkedListNode sum(LinkedListNode l1, LinkedListNode l2) {
-        throw new UnsupportedOperationException();
+        if (l1 == null && l2 == null) return null;
+        int sum = getNumber(l1) + getNumber(l2);
+        String str = String.valueOf(sum);
+        LinkedListNode head = null;
+        LinkedListNode prev = head;
+        for (char c : str.toCharArray()) {
+            LinkedListNode digit = new LinkedListNode(c - '0');
+            if (prev == null) {
+                head = digit;
+                prev = head;
+            } else {
+                prev.next = digit;
+                prev = prev.next;
+            }
+        }
+        return head;
     }
 
+    private static int getNumber(LinkedListNode head) {
+        LinkedListNode cur = head;
+        int ret = 0;
+        while (cur != null) {
+            ret = ret * 10 + cur.val;
+            cur = cur.next;
+        }
+        return ret;
+    }
 }

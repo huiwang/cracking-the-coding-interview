@@ -16,18 +16,19 @@ class _02_04_Partition {
         if (head == null) {
             return null;
         }
-        LinkedListNode partition = null;
-        LinkedListNode prev = head;
-        LinkedListNode next = head.next;
-        while (next != null) {
-            if (next.val >= x) {
-                if (partition == null) {
-                    partition = next;
-                } else {
-                    partition.next = next;
-                }
-                prev.next = next.next;
+        LinkedListNode pre = null;
+        LinkedListNode cur = head;
+        while (cur != null) {
+            if (cur.val < x && pre != null) {
+                pre.next = cur.next;
+                cur.next = head;
+                head = cur;
+                cur = pre.next;
+            } else {
+                pre = cur;
+                cur = cur.next;
             }
         }
+        return head;
     }
 }

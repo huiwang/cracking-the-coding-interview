@@ -3,8 +3,7 @@ package geek.math;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -52,5 +51,30 @@ public class MathLesson14_GraphTest {
         assertEquals(2, userGraph.distance(0, 6));
         assertEquals(3, userGraph.distance(0, 4));
         assertEquals(-1, userGraph.distance(0, 3));
+    }
+
+    public int lengthOfLongestSubstring(String s) {
+        if ( s == null || s.length() == 0) {
+            return 0;
+        }
+        int max = 0;
+        Set<Character> set = new HashSet<>();
+        Queue<Character> queue = new LinkedList<>();
+        char[] chars = s.toCharArray();
+        for (int i = 0; i < chars.length; ++i) {
+            char c = chars[i];
+            if (set.contains(c)) {
+                int count = queue.size();
+                if (count > max) {
+                    max = count;
+                }
+                while (queue.remove() != c) {}
+                queue.add(c);
+            } else {
+                set.add(c);
+                queue.add(c);
+            }
+        }
+        return Math.max(max, queue.size());
     }
 }
