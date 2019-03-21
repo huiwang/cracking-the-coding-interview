@@ -1,6 +1,7 @@
 package sortingsearching;
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Write a method to sort an array of strings so that all the anagrams are next to each other.
@@ -12,7 +13,18 @@ public class _10_02_GroupAnagrams {
      * space o(n)
      */
     List<String> groupAnagrams(List<String> words) {
-        throw new UnsupportedOperationException();
+        Map<String, List<String>> group = new HashMap<>();
+        for (String word : words) {
+            String sorted = sortedString(word);
+            group.computeIfAbsent(sorted, k -> new ArrayList<>()).add(word);
+        }
+        return group.values().stream().flatMap(List::stream).collect(Collectors.toList());
+    }
+
+    private String sortedString(String str) {
+        char[] chars = str.toCharArray();
+        Arrays.sort(chars);
+        return new String(chars);
     }
 
 }
