@@ -46,4 +46,10 @@ public class _01_08_ZeroMatrixTest {
                                 {4, 0, 6},
                                 {7, 8, 9}})));
     }
+
+    // add test case from leetcode 73
+    @Test
+    public void withTwoOne() {
+        assertTrue(Arrays.deepEquals(new int[][]{{0}, {0}}, new _01_08_ZeroMatrix().zero(new int[][]{{1}, {0}})));
+    }
 }

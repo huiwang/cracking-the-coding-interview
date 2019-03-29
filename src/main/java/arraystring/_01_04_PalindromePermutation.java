@@ -12,6 +12,22 @@ package arraystring;
  */
 class _01_04_PalindromePermutation {
     boolean check(String s) {
-        throw new UnsupportedOperationException();
+        char[] chars = s.toCharArray();
+        int i = 0, j = s.length() - 1;
+        while (i < j) {
+            while (i < j && !Character.isLetterOrDigit(chars[i])) {
+                i++;
+            }
+            while (j > i && !Character.isLetterOrDigit(chars[j])) {
+                j--;
+            }
+            if (i >= j) return true;
+            if (Character.toLowerCase(chars[i]) != Character.toLowerCase(chars[j])) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
     }
 }

@@ -13,7 +13,35 @@ package arraystring;
  */
 class _01_05_OneAway {
     boolean isOneAway(String a, String b) {
-        throw new UnsupportedOperationException();
+        int len = a.length();
+        if (Math.abs(a.length() - b.length()) == 1) {
+            char[] shorter = a.length() < b.length() ? a.toCharArray() : b.toCharArray();
+            char[] longer = a.length() < b.length() ? b.toCharArray() : a.toCharArray();
+            for (int i = 0, j = 0; i < shorter.length; i++) {
+                while (shorter[i] != longer[j++]) {
+                    if (j > i+1) {
+                        return false;
+                    }
+                }
+            }
+        }
+        else if (a.length() == b.length()) {
+            boolean hasDifferent = false;
+            for (int i = 0; i < a.length(); i ++) {
+                if (a.charAt(i) != b.charAt(i)) {
+                    if (!hasDifferent) {
+                        hasDifferent = true;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            }
+        }
+        else {
+            return false;
+        }
+        return true;
     }
 
 }

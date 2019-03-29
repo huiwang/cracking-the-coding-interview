@@ -1,5 +1,8 @@
 package arraystring;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+
 /**
  * Implement an algorithm to determine if a string has all unique characters.
  */
@@ -7,7 +10,9 @@ package arraystring;
 class _01_01_IsUnique {
 
     boolean isUnique(String str) {
-        throw new UnsupportedOperationException();
+//        long distinctCount = str.chars().boxed().distinct().count();
+        Set<Integer> set = str.chars().boxed().collect(Collectors.toSet());
+        return set.size() == str.length();
     }
 
 }
