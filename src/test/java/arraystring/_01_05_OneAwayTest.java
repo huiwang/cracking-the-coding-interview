@@ -11,7 +11,7 @@ public class _01_05_OneAwayTest {
 
     @Test
     public void withEmpty() {
-        assertTrue(s.isOneAway("", ""));
+        assertFalse(s.isOneAway("", ""));
     }
 
     @Test
@@ -42,5 +42,10 @@ public class _01_05_OneAwayTest {
     @Test
     public void withMoreEdits() {
         assertFalse(s.isOneAway("paxye", "pamne"));
+    }
+
+    @Test
+    public void withNoEdits() {
+        assertFalse(s.isOneAway("something", "something"));
     }
 }
