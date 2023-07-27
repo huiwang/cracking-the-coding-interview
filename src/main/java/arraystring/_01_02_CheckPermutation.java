@@ -1,21 +1,18 @@
 package arraystring;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
 
 /**
  * Given two strings,write a method to decide if one is a permutation of the other.
  */
 class _01_02_CheckPermutation {
     boolean check(String a, String b) {
-        return computeFrequency(a).equals(computeFrequency(b));
+        return Arrays.equals(sorted(a), sorted(b));
     }
 
-    private Map<Character, Integer> computeFrequency(String s) {
-        Map<Character, Integer> freq = new HashMap<>();
-        for (int i = 0; i < s.length(); i++) {
-            freq.merge(s.charAt(i), 1, (ov, v) -> ov + v);
-        }
-        return freq;
+    private static char[] sorted(String s) {
+        char[] chars = s.toCharArray();
+        Arrays.sort(chars);
+        return chars;
     }
 }
