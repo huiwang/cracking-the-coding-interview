@@ -1,48 +1,48 @@
 package recursivedp;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class _08_11_CoinsTest {
+import org.junit.jupiter.api.Test;
 
-    private final _08_11_Coins s = new _08_11_Coins();
+class _08_11_CoinsTest {
 
-    @Test
-    public void withZeroCent() {
-        Assert.assertEquals(1, s.makeChangeWithQuarterDimeNickelPenny(0));
-    }
+  private final _08_11_Coins s = new _08_11_Coins();
 
-    @Test
-    public void withOneCent() {
-        Assert.assertEquals(1, s.makeChangeWithQuarterDimeNickelPenny(2));
-    }
+  @Test
+  void withZeroCent() {
+    assertEquals(1, s.makeChangeWithQuarterDimeNickelPenny(0));
+  }
 
-    @Test
-    public void withTwoCents() {
-        Assert.assertEquals(1, s.makeChangeWithQuarterDimeNickelPenny(3));
-    }
+  @Test
+  void withOneCent() {
+    assertEquals(1, s.makeChangeWithQuarterDimeNickelPenny(2));
+  }
 
-    @Test
-    public void with25Cents() {
-        //25
-        //10 10 5
-        //10 10 1 1 1 1 1
-        //10 5 5 5
-        //10 5 5 1 1 1 1 1
-        //10 5 1 1 1 1 1 1 1 1 1 1
-        //10 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        //5 5 5 5 5
-        //5 5 5 5 1 1 1 1 1
-        //5 5 5 1 1 1 1 1 1 1 1 1 1
-        //5 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        //5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        //1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        Assert.assertEquals(13, s.makeChangeWithQuarterDimeNickelPenny(25));
-    }
+  @Test
+  void withTwoCents() {
+    assertEquals(1, s.makeChangeWithQuarterDimeNickelPenny(3));
+  }
 
-    @Test
-    public void with100Cents() {
-        Assert.assertEquals(242, s.makeChangeWithQuarterDimeNickelPenny(100));
-    }
+  @Test
+  void with25Cents() {
+    // 25
+    // 10 10 5
+    // 10 10 1 1 1 1 1
+    // 10 5 5 5
+    // 10 5 5 1 1 1 1 1
+    // 10 5 1 1 1 1 1 1 1 1 1 1
+    // 10 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    // 5 5 5 5 5
+    // 5 5 5 5 1 1 1 1 1
+    // 5 5 5 1 1 1 1 1 1 1 1 1 1
+    // 5 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    // 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    assertEquals(13, s.makeChangeWithQuarterDimeNickelPenny(25));
+  }
 
+  @Test
+  void with100Cents() {
+    assertEquals(242, s.makeChangeWithQuarterDimeNickelPenny(100));
+  }
 }

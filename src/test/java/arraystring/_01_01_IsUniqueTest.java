@@ -1,27 +1,26 @@
 package arraystring;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
 
-public class _01_01_IsUniqueTest {
+class _01_01_IsUniqueTest {
 
-    private _01_01_IsUnique s = new _01_01_IsUnique();
+  private _01_01_IsUnique s = new _01_01_IsUnique();
 
-    @Test
-    public void withEmptyString() {
-        assertTrue(s.isUnique(""));
-    }
+  @Test
+  void withEmptyString() {
+    assertTrue(s.isUnique(""));
+  }
 
-    @Test
-    public void withUniqueString() {
-        assertTrue(s.isUnique("abcde"));
-    }
+  @Test
+  void withUniqueString() {
+    assertTrue(s.isUnique("abcde"));
+  }
 
-    @Test
-    public void withDuplication() {
-        assertFalse(s.isUnique("abcda"));
-    }
-
+  @Test
+  void withDuplication() {
+    assertFalse(s.isUnique("abcda"));
+  }
 }

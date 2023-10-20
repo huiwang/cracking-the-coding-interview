@@ -1,25 +1,25 @@
 package linkedlist;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class _02_01_RemoveDupsTest {
+import org.junit.jupiter.api.Test;
 
-    private _02_01_RemoveDups s = new _02_01_RemoveDups();
+class _02_01_RemoveDupsTest {
 
-    @Test
-    public void withEmptyList() {
-        Assert.assertEquals(LinkedListNode.empty(), s.removeDups(LinkedListNode.empty()));
-    }
+  private _02_01_RemoveDups s = new _02_01_RemoveDups();
 
-    @Test
-    public void withUniqueList() {
-        Assert.assertEquals(LinkedListNode.of(1, 2, 3, 4), s.removeDups(LinkedListNode.of(1, 2, 3, 4)));
-    }
+  @Test
+  void withEmptyList() {
+    assertEquals(LinkedListNode.empty(), s.removeDups(LinkedListNode.empty()));
+  }
 
-    @Test
-    public void withDuplications() {
-        Assert.assertEquals(LinkedListNode.of(1, 2, 3, 4), s.removeDups(LinkedListNode.of(1, 2, 2, 3, 2, 4)));
-    }
+  @Test
+  void withUniqueList() {
+    assertEquals(LinkedListNode.of(1, 2, 3, 4), s.removeDups(LinkedListNode.of(1, 2, 3, 4)));
+  }
 
+  @Test
+  void withDuplications() {
+    assertEquals(LinkedListNode.of(1, 2, 3, 4), s.removeDups(LinkedListNode.of(1, 2, 2, 3, 2, 4)));
+  }
 }
