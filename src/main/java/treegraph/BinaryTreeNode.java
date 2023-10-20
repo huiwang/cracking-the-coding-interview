@@ -1,11 +1,11 @@
 package treegraph;
 
 class BinaryTreeNode {
-    int val;
-    BinaryTreeNode left;
-    BinaryTreeNode right;
+  int val;
+  BinaryTreeNode left;
+  BinaryTreeNode right;
 
-    BinaryTreeNode(int val) {
-        this.val = val;
-    }
+  BinaryTreeNode(int val) {
+    this.val = val;
+  }
 }

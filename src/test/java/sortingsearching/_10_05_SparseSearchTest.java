@@ -1,37 +1,39 @@
 package sortingsearching;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class _10_05_SparseSearchTest {
+import org.junit.jupiter.api.Test;
 
-    private final _10_05_SparseSearch sparseSearch = new _10_05_SparseSearch();
+class _10_05_SparseSearchTest {
 
-    @Test
-    public void withEmptyString() {
-        Assert.assertEquals(-1, sparseSearch.find(new String[]{"hello", "", "world"}, ""));
-    }
+  private final _10_05_SparseSearch sparseSearch = new _10_05_SparseSearch();
 
-    @Test
-    public void withValidString() {
-        Assert.assertEquals(8, sparseSearch.find(
-                new String[]{"hello", "", "", "idea", "", "", "", "", "world", "", "", "", "", "", "xylo", "", ""},
-                "world"));
+  @Test
+  void withEmptyString() {
+    assertEquals(-1, sparseSearch.find(new String[] {"hello", "", "world"}, ""));
+  }
 
-    }
+  @Test
+  void withValidString() {
+    assertEquals(
+        8,
+        sparseSearch.find(
+            new String[] {
+              "hello", "", "", "idea", "", "", "", "", "world", "", "", "", "", "", "xylo", "", ""
+            },
+            "world"));
+  }
 
-    @Test
-    public void withManySparse() {
-        Assert.assertEquals(0, sparseSearch.find(
-                new String[]{"hello", "", "", "", "", "", "", "", "", "", "", "", "", ""},
-                "hello"));
+  @Test
+  void withManySparse() {
+    assertEquals(
+        0,
+        sparseSearch.find(
+            new String[] {"hello", "", "", "", "", "", "", "", "", "", "", "", "", ""}, "hello"));
+  }
 
-    }
-    @Test
-    public void withWordInTheEnd() {
-        Assert.assertEquals(3, sparseSearch.find(
-                new String[]{"", "", "", "hello"},
-                "hello"));
-
-    }
+  @Test
+  void withWordInTheEnd() {
+    assertEquals(3, sparseSearch.find(new String[] {"", "", "", "hello"}, "hello"));
+  }
 }
