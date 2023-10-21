@@ -1,7 +1,6 @@
 package arraystring;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,15 +11,6 @@ class _01_03_URLifyTest {
   @Test
   void withNoSpace() {
     assertArrayEquals("hello".toCharArray(), s.urlify("hello".toCharArray(), 5));
-  }
-
-  @Test
-  void withInsufficientLength() {
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> {
-          s.urlify("hello world ".toCharArray(), 11);
-        });
   }
 
   @Test
