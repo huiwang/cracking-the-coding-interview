@@ -20,7 +20,7 @@ class _01_06_StringCompressionTest {
 
   @Test
   void withThreeChars() {
-    assertEquals("3a", s.compress("aaa"));
+    assertEquals("a3", s.compress("aaa"));
   }
 
   @Test
@@ -30,11 +30,11 @@ class _01_06_StringCompressionTest {
 
   @Test
   void withDifferentChars_RepeatingSeveralTimes() {
-    assertEquals("3a2b", s.compress("aaabb"));
+    assertEquals("a3b2", s.compress("aaabb"));
   }
 
   @Test
   void withDifferentChars_RepeatingInMoreSeqs() {
-    assertEquals("3a2b2a", s.compress("aaabbaa"));
+    assertEquals("a3b2a2", s.compress("aaabbaa"));
   }
 }
